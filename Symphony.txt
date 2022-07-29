@@ -1,0 +1,25 @@
+﻿Il faut installer PHP
+Il faut aussi insaller composer
+Vérifier l'existance:
+php -v
+symfony -v
+
+Création d'un 1er projet symfony:
+symfony new nom_projet
+
+Exec du projet:
+symfony serve
+
+Notion de base symfony:
+-Notion de controller:
+php bin/console make:controller nom_controller
+
+La structure du projet:
+-src: contient un dossier nommé controller + d'autre dossiers
+-templates: contient les pages .html.twig de notre application (partie qui contient un dossier 
+ayant le nom de notre controller dans notre cas le nom du dossier est "blog")
+
+-On va crée 2 entités:
+->article(coté base de données c'est une table, mais coté code c'est une classe)
+->catégorie(coté base de données c'est une table, mais coté code c'est une classe)
+=>On vas les crée par ligne de commande

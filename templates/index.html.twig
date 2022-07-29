@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VoitureCom</title>
+    </head>
+    <body>
+        {% for marque in marques %}
+        <div class='marques'>
+            <h1>{{marque.nom}}<h1>
+                <h5>{{marque.description}}</h5>
+        </div>
+        {% endfor %}
+    </body>
