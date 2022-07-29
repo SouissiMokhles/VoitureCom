@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Repository\MarquesRepository;
@@ -18,8 +18,6 @@ class VoitureController extends AbstractController
     public function index(MarquesRepository $marquesRepo): Response
     {
         $marques = $marquesRepo->findAll();
-        return $this->render('index.html.twig',[
-            'marques'=>$marques,
-        ]);
+        return $this->render('index.html.twig',['marques'=>$marques,]);
     }
 }
