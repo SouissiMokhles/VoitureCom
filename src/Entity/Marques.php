@@ -24,6 +24,9 @@ class Marques
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Models::class)]
     private Collection $models;
 
+    #[ORM\Column(length: 255)]
+    private ?string $imgurl = null;
+
     public function __construct()
     {
         $this->models = new ArrayCollection();
@@ -55,6 +58,16 @@ class Marques
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+    public function getImgurl(): ?string
+    {
+        return $this->imgurl;
+    }
+    public function setImgurl(string $imgurl): self
+    {
+        $this->imgurl = $imgurl;
         return $this;
     }
 

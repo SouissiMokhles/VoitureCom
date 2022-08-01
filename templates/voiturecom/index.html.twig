@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}VoitureCom{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">VoitureCom</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Our Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Our partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+          <button class="btn btn-secondary my-2 my-sm-0">Login</button>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    {% for marque in marques %}
+    <div class="col-sm">
+<div class="card text-white bg-primary mt-3 ml-3" style="max-width: 20rem;">
+    <div class="card-header">{{marque.nom}}</div>
+    <img src={{marque.imgurl}} class="d-block user-select-none mx-auto" width="150" height="150" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    <div class="card-body">
+      <p class="card-text">{{marque.description}}</p>
+      <a href={{path('models',{id:'marque.id'})}} class="card-link- btn btn-secondary">Voir les models disponible
+      </a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+    {% endblock %}

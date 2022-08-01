@@ -8,16 +8,26 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Repository\MarquesRepository;
 use App\Repository\ModelsRepository;
+use App\Entity\Models;
+use App\Entity\Marques;
 
 
 class VoitureController extends AbstractController
 {
     /**     
-     *  @Route("/voiture", name= "voiture")
+     *  @Route("/", name= "voiture")
      * */
     public function index(MarquesRepository $marquesRepo): Response
     {
         $marques = $marquesRepo->findAll();
-        return $this->render('index.html.twig',['marques'=>$marques,]);
+        return $this->render('voiturecom/index.html.twig',['marques'=>$marques,]);
+    }
+
+    /**
+     * @Route("/voiture/{id}", name="models")
+     */
+    public function models(Marques $marques)
+    {
+        return $this->render('voiturecom/models.html.twig',['marques'=>$marques,]);
     }
 }
