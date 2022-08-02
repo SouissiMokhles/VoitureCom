@@ -43,7 +43,7 @@ class MarquesController extends AbstractController
     #[Route('/{id}', name: 'app_marques_show', methods: ['GET'])]
     public function show(Marques $marque): Response
     {
-        return $this->render('marques/show.html.twig', [
+        return $this->render('models/show.html.twig', [
             'marque' => $marque,
         ]);
     }
