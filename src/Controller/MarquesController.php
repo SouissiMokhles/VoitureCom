@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/marques')]
 class MarquesController extends AbstractController
 {
     #[Route('/', name: 'app_marques_index', methods: ['GET'])]
@@ -40,13 +39,6 @@ class MarquesController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_marques_show', methods: ['GET'])]
-    public function show(Marques $marque): Response
-    {
-        return $this->render('models/show.html.twig', [
-            'marque' => $marque,
-        ]);
-    }
 
     #[Route('/{id}/edit', name: 'app_marques_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Marques $marque, MarquesRepository $marquesRepository): Response

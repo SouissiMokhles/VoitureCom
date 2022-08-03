@@ -23,7 +23,7 @@
                 <td>{{ marque.description }}</td>
                 <td>{{ marque.imgurl }}</td>
                 <td>
-                    <a href="{{ path('app_marques_show', {'id': marque.id}) }}">show</a>
+                    <a href="{{ path('app_model_by_marque', {'id': marque.id}) }}">show</a>
                     <a href="{{ path('app_marques_edit', {'id': marque.id}) }}">edit</a>
                 </td>
             </tr>
